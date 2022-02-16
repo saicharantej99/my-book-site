@@ -1,14 +1,10 @@
 # Table of contents
 # Learn more at https://jupyterbook.org/customize/toc.html
 
-#add the top header
-- header: My Jupyter Book
-
-#add a divider
-- divider: true
-
 format: jb-book
 root: intro
 chapters:
 - file: markdown
-- file: notebooks
+- file: notebooks/NER.ipynb
+- file: notebooks/NYC_Property_Sales.ipynb
+- file: notebooks/PCA-with-IRIS-Dataset.ipynb

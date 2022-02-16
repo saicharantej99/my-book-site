@@ -1,0 +1,672 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>&lt;no title&gt; &#8212; Demo-book</title>
+    
+  <link href="../_static/css/theme.css" rel="stylesheet">
+  <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script>
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Case study 2: Linear regression model to predict sales price of properties" href="NYC_Property_Sales.html" />
+    <link rel="prev" title="Markdown Files" href="../markdown.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+      
+      
+      <h1 class="site-logo" id="site-title">Demo-book</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../intro.html">
+   Welcome to your Jupyter Book
+  </a>
+ </li>
+</ul>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../markdown.html">
+   Markdown Files
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="NYC_Property_Sales.html">
+   Case study 2: Linear regression model to predict sales price of properties
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/notebooks/NER.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/notebooks/NER.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="simple visible nav section-nav flex-column">
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1><no title></h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="simple visible nav section-nav flex-column">
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            
+              <div>
+                
+  <div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">spacy</span>
+<span class="n">nlp</span><span class="o">=</span><span class="n">spacy</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s1">&#39;en_core_web_sm&#39;</span><span class="p">)</span>
+
+<span class="n">nlp</span><span class="o">.</span><span class="n">pipe_names</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
+<span class="o">~</span>\<span class="n">AppData</span>\<span class="n">Local</span>\<span class="n">Temp</span>\<span class="n">ipykernel_1728</span>\<span class="mf">1352668536.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="kn">import</span> <span class="nn">spacy</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">nlp</span><span class="o">=</span><span class="n">spacy</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s1">&#39;en_core_web_sm&#39;</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> 
+<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="n">nlp</span><span class="o">.</span><span class="n">pipe_names</span>
+
+<span class="ne">ModuleNotFoundError</span>: No module named &#39;spacy&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">article_text</span><span class="o">=</span><span class="s2">&quot;&quot;&quot;India that previously comprised only a handful of players in the e-commerce space, is now home to many biggies and giants battling out with each other to reach the top. This is thanks to the overwhelming internet and smartphone penetration coupled with the ever-increasing digital adoption across the country. These new-age innovations not only gave emerging startups a unique platform to deliver seamless shopping experiences but also provided brick and mortar stores with a level-playing field to begin their online journeys without leaving their offline legacies.</span>
+<span class="s2">In the wake of so many players coming together on one platform, the Indian e-commerce market is envisioned to reach USD 84 billion in 2021 from USD 24 billion in 2017. Further, with the rate at which internet penetration is increasing, we can expect more and more international retailers coming to India in addition to a large pool of new startups. This, in turn, will provide a major Philip to the organized retail market and boost its share from 12</span><span class="si">% i</span><span class="s2">n 2017 to 22-25% by 2021. </span>
+<span class="s2">Here’s a view to the e-commerce giants that are dominating India’s online shopping space:</span>
+<span class="s2">Amazon – One of the uncontested global leaders, Amazon started its journey as a simple online bookstore that gradually expanded its reach to provide a large suite of diversified products including media, furniture, food, and electronics, among others. And now with the launch of Amazon Prime and Amazon Music Limited, it has taken customer experience to a godly level, which will remain undefeatable for a very long time. </span>
+<span class="s2">Flipkart – Founded in 2007, Flipkart is recognized as the national leader in the Indian e-commerce market. Just like Amazon, it started operating by selling books and then entered other categories such as electronics, fashion, and lifestyle, mobile phones, etc. And now that it has been acquired by Walmart, one of the largest leading platforms of e-commerce in the US, it has also raised its bar of customer offerings in all aspects and giving huge competition to Amazon. </span>
+<span class="s2">Snapdeal – Started as a daily deals platform in 2010, Snapdeal became a full-fledged online marketplace in 2011 comprising more than 3 lac sellers across India. The platform offers over 30 million products across 800+ diverse categories from over 125,000 regional, national, and international brands and retailers. The Indian e-commerce firm follows a robust strategy to stay at the forefront of innovation and deliver seamless customer offerings to its wide customer base. It has shown great potential for recovery in recent years despite losing Freecharge and Unicommerce. </span>
+<span class="s2">ShopClues – Another renowned name in the Indian e-commerce industry, ShopClues was founded in July 2011. It’s a Gurugram based company having a current valuation of INR 1.1 billion and is backed by prominent names including Nexus Venture Partners, Tiger Global, and Helion Ventures as its major investors. Presently, the platform comprises more than 5 lac sellers selling products in nine different categories such as computers, cameras, mobiles, etc. </span>
+<span class="s2">Paytm Mall – To compete with the existing e-commerce giants, Paytm, an online payment system has also launched its online marketplace – Paytm Mall, which offers a wide array of products ranging from men and women fashion to groceries and cosmetics, electronics and home products, and many more. The unique thing about this platform is that it serves as a medium for third parties to sell their products directly through the widely-known app – Paytm. </span>
+<span class="s2">Reliance Retail – Given Reliance Jio’s disruptive venture in the Indian telecom space along with a solid market presence of Reliance, it is no wonder that Reliance will soon be foraying into retail space. As of now, it has plans to build an e-commerce space that will be established on online-to-offline market program and aim to bring local merchants on board to help them boost their sales and compete with the existing industry leaders. </span>
+<span class="s2">Big Basket – India’s biggest online supermarket, Big Basket provides a wide variety of imported and gourmet products through two types of delivery services – express delivery and slotted delivery. It also offers pre-cut fruits along with a long list of beverages including fresh juices, cold drinks, hot teas, etc. Moreover, it not only provides farm-fresh products but also ensures that the farmer gets better prices. </span>
+<span class="s2">Grofers – One of the leading e-commerce players in the grocery segment, Grofers started its operations in 2013 and has reached overwhelming heights in the last 5 years. Its wide range of products includes atta, milk, oil, daily need products, vegetables, dairy products, juices, beverages, among others. With its growing reach across India, it has become one of the favorite supermarkets for Indian consumers who want to shop grocery items from the comforts of their homes. </span>
+<span class="s2">Digital Mall of Asia – Going live in 2020, Digital Mall of Asia is a very unique concept coined by the founders of Yokeasia Malls. It is designed to provide an immersive digital space equipped with multiple visual and sensory elements to sellers and shoppers. It will also give retailers exclusive rights to sell a particular product category or brand in their respective cities. What makes it unique is its zero-commission model enabling retailers to pay only a fixed amount of monthly rental instead of paying commissions. With its one-of-a-kind features, DMA is expected to bring</span>
+<span class="s2">never-seen transformation to the current e-commerce ecosystem while addressing all the existing e-commerce worries such as counterfeiting. &quot;&quot;&quot;</span>
+
+<span class="n">doc</span><span class="o">=</span><span class="n">nlp</span><span class="p">(</span><span class="n">article_text</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">ent</span> <span class="ow">in</span> <span class="n">doc</span><span class="o">.</span><span class="n">ents</span><span class="p">:</span>
+  <span class="nb">print</span><span class="p">(</span><span class="n">ent</span><span class="o">.</span><span class="n">text</span><span class="p">,</span><span class="n">ent</span><span class="o">.</span><span class="n">label_</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>India GPE
+one CARDINAL
+Indian NORP
+USD 84 billion MONEY
+2021 DATE
+USD 24 billion MONEY
+2017 DATE
+India GPE
+Philip PERSON
+12% PERCENT
+2017 DATE
+22-25% PERCENT
+2021 DATE
+India GPE
+Amazon ORG
+One CARDINAL
+Amazon ORG
+Amazon ORG
+Amazon Music Limited ORG
+Flipkart PERSON
+2007 DATE
+Flipkart PERSON
+Indian NORP
+Amazon ORG
+Walmart LOC
+one CARDINAL
+US GPE
+Amazon ORG
+daily DATE
+2010 DATE
+2011 DATE
+more than 3 CARDINAL
+India GPE
+over 30 million CARDINAL
+over 125,000 CARDINAL
+Indian NORP
+recent years DATE
+Freecharge PERSON
+Unicommerce GPE
+ShopClues PERSON
+Indian NORP
+ShopClues ORG
+July 2011 DATE
+Gurugram ORG
+INR ORG
+1.1 billion CARDINAL
+Nexus Venture Partners ORG
+Helion Ventures ORG
+more than 5 CARDINAL
+nine CARDINAL
+Paytm Mall PERSON
+Paytm ORG
+Paytm Mall FAC
+third ORDINAL
+Paytm GPE
+Indian NORP
+Reliance ORG
+Reliance ORG
+India GPE
+Big Basket ORG
+two CARDINAL
+One CARDINAL
+2013 DATE
+the last 5 years DATE
+daily DATE
+India GPE
+Indian NORP
+Digital Mall FAC
+Asia LOC
+2020 DATE
+Digital Mall ORG
+Asia LOC
+Yokeasia Malls GPE
+zero CARDINAL
+monthly DATE
+one CARDINAL
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Load pre-existing spacy model</span>
+<span class="kn">import</span> <span class="nn">spacy</span>
+<span class="n">nlp</span><span class="o">=</span><span class="n">spacy</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s1">&#39;en_core_web_sm&#39;</span><span class="p">)</span>
+
+<span class="c1"># Getting the pipeline component</span>
+<span class="n">ner</span><span class="o">=</span><span class="n">nlp</span><span class="o">.</span><span class="n">get_pipe</span><span class="p">(</span><span class="s2">&quot;ner&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># training data</span>
+<span class="n">TRAIN_DATA</span> <span class="o">=</span> <span class="p">[</span>
+              <span class="p">(</span><span class="s2">&quot;Walmart is a leading e-commerce company&quot;</span><span class="p">,</span> <span class="p">{</span><span class="s2">&quot;entities&quot;</span><span class="p">:</span> <span class="p">[(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="s2">&quot;ORG&quot;</span><span class="p">)]}),</span>
+              <span class="p">(</span><span class="s2">&quot;I reached Chennai yesterday.&quot;</span><span class="p">,</span> <span class="p">{</span><span class="s2">&quot;entities&quot;</span><span class="p">:</span> <span class="p">[(</span><span class="mi">19</span><span class="p">,</span> <span class="mi">28</span><span class="p">,</span> <span class="s2">&quot;GPE&quot;</span><span class="p">)]}),</span>
+              <span class="p">(</span><span class="s2">&quot;I recently ordered a book from Amazon&quot;</span><span class="p">,</span> <span class="p">{</span><span class="s2">&quot;entities&quot;</span><span class="p">:</span> <span class="p">[(</span><span class="mi">24</span><span class="p">,</span><span class="mi">32</span><span class="p">,</span> <span class="s2">&quot;ORG&quot;</span><span class="p">)]}),</span>
+              <span class="p">(</span><span class="s2">&quot;I was driving a BMW&quot;</span><span class="p">,</span> <span class="p">{</span><span class="s2">&quot;entities&quot;</span><span class="p">:</span> <span class="p">[(</span><span class="mi">16</span><span class="p">,</span><span class="mi">19</span><span class="p">,</span> <span class="s2">&quot;PRODUCT&quot;</span><span class="p">)]}),</span>
+              <span class="p">(</span><span class="s2">&quot;I ordered this from ShopClues&quot;</span><span class="p">,</span> <span class="p">{</span><span class="s2">&quot;entities&quot;</span><span class="p">:</span> <span class="p">[(</span><span class="mi">20</span><span class="p">,</span><span class="mi">29</span><span class="p">,</span> <span class="s2">&quot;ORG&quot;</span><span class="p">)]}),</span>
+              <span class="p">(</span><span class="s2">&quot;Fridge can be ordered in Amazon &quot;</span><span class="p">,</span> <span class="p">{</span><span class="s2">&quot;entities&quot;</span><span class="p">:</span> <span class="p">[(</span><span class="mi">0</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span> <span class="s2">&quot;PRODUCT&quot;</span><span class="p">)]}),</span>
+              <span class="p">(</span><span class="s2">&quot;I bought a new Washer&quot;</span><span class="p">,</span> <span class="p">{</span><span class="s2">&quot;entities&quot;</span><span class="p">:</span> <span class="p">[(</span><span class="mi">16</span><span class="p">,</span><span class="mi">22</span><span class="p">,</span> <span class="s2">&quot;PRODUCT&quot;</span><span class="p">)]}),</span>
+              <span class="p">(</span><span class="s2">&quot;I bought a old table&quot;</span><span class="p">,</span> <span class="p">{</span><span class="s2">&quot;entities&quot;</span><span class="p">:</span> <span class="p">[(</span><span class="mi">16</span><span class="p">,</span><span class="mi">21</span><span class="p">,</span> <span class="s2">&quot;PRODUCT&quot;</span><span class="p">)]}),</span>
+              <span class="p">(</span><span class="s2">&quot;I bought a fancy dress&quot;</span><span class="p">,</span> <span class="p">{</span><span class="s2">&quot;entities&quot;</span><span class="p">:</span> <span class="p">[(</span><span class="mi">18</span><span class="p">,</span><span class="mi">23</span><span class="p">,</span> <span class="s2">&quot;PRODUCT&quot;</span><span class="p">)]}),</span>
+              <span class="p">(</span><span class="s2">&quot;I rented a camera&quot;</span><span class="p">,</span> <span class="p">{</span><span class="s2">&quot;entities&quot;</span><span class="p">:</span> <span class="p">[(</span><span class="mi">12</span><span class="p">,</span><span class="mi">18</span><span class="p">,</span> <span class="s2">&quot;PRODUCT&quot;</span><span class="p">)]}),</span>
+              <span class="p">(</span><span class="s2">&quot;I rented a tent for our trip&quot;</span><span class="p">,</span> <span class="p">{</span><span class="s2">&quot;entities&quot;</span><span class="p">:</span> <span class="p">[(</span><span class="mi">12</span><span class="p">,</span><span class="mi">16</span><span class="p">,</span> <span class="s2">&quot;PRODUCT&quot;</span><span class="p">)]}),</span>
+              <span class="p">(</span><span class="s2">&quot;I rented a screwdriver from our neighbour&quot;</span><span class="p">,</span> <span class="p">{</span><span class="s2">&quot;entities&quot;</span><span class="p">:</span> <span class="p">[(</span><span class="mi">12</span><span class="p">,</span><span class="mi">22</span><span class="p">,</span> <span class="s2">&quot;PRODUCT&quot;</span><span class="p">)]}),</span>
+              <span class="p">(</span><span class="s2">&quot;I repaired my computer&quot;</span><span class="p">,</span> <span class="p">{</span><span class="s2">&quot;entities&quot;</span><span class="p">:</span> <span class="p">[(</span><span class="mi">15</span><span class="p">,</span><span class="mi">23</span><span class="p">,</span> <span class="s2">&quot;PRODUCT&quot;</span><span class="p">)]}),</span>
+              <span class="p">(</span><span class="s2">&quot;I got my clock fixed&quot;</span><span class="p">,</span> <span class="p">{</span><span class="s2">&quot;entities&quot;</span><span class="p">:</span> <span class="p">[(</span><span class="mi">16</span><span class="p">,</span><span class="mi">21</span><span class="p">,</span> <span class="s2">&quot;PRODUCT&quot;</span><span class="p">)]}),</span>
+              <span class="p">(</span><span class="s2">&quot;I got my truck fixed&quot;</span><span class="p">,</span> <span class="p">{</span><span class="s2">&quot;entities&quot;</span><span class="p">:</span> <span class="p">[(</span><span class="mi">16</span><span class="p">,</span><span class="mi">21</span><span class="p">,</span> <span class="s2">&quot;PRODUCT&quot;</span><span class="p">)]}),</span>
+              <span class="p">(</span><span class="s2">&quot;Flipkart started it&#39;s journey from zero&quot;</span><span class="p">,</span> <span class="p">{</span><span class="s2">&quot;entities&quot;</span><span class="p">:</span> <span class="p">[(</span><span class="mi">0</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span> <span class="s2">&quot;ORG&quot;</span><span class="p">)]}),</span>
+              <span class="p">(</span><span class="s2">&quot;I recently ordered from Max&quot;</span><span class="p">,</span> <span class="p">{</span><span class="s2">&quot;entities&quot;</span><span class="p">:</span> <span class="p">[(</span><span class="mi">24</span><span class="p">,</span><span class="mi">27</span><span class="p">,</span> <span class="s2">&quot;ORG&quot;</span><span class="p">)]}),</span>
+              <span class="p">(</span><span class="s2">&quot;Flipkart is recognized as leader in market&quot;</span><span class="p">,{</span><span class="s2">&quot;entities&quot;</span><span class="p">:</span> <span class="p">[(</span><span class="mi">0</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span> <span class="s2">&quot;ORG&quot;</span><span class="p">)]}),</span>
+              <span class="p">(</span><span class="s2">&quot;I recently ordered from Swiggy&quot;</span><span class="p">,</span> <span class="p">{</span><span class="s2">&quot;entities&quot;</span><span class="p">:</span> <span class="p">[(</span><span class="mi">24</span><span class="p">,</span><span class="mi">29</span><span class="p">,</span> <span class="s2">&quot;ORG&quot;</span><span class="p">)]})</span>
+              <span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Adding labels to the `ner`</span>
+
+<span class="k">for</span> <span class="n">_</span><span class="p">,</span> <span class="n">annotations</span> <span class="ow">in</span> <span class="n">TRAIN_DATA</span><span class="p">:</span>
+  <span class="k">for</span> <span class="n">ent</span> <span class="ow">in</span> <span class="n">annotations</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;entities&quot;</span><span class="p">):</span>
+    <span class="n">ner</span><span class="o">.</span><span class="n">add_label</span><span class="p">(</span><span class="n">ent</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Disable pipeline components you dont need to change</span>
+<span class="n">pipe_exceptions</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;ner&quot;</span><span class="p">,</span> <span class="s2">&quot;trf_wordpiecer&quot;</span><span class="p">,</span> <span class="s2">&quot;trf_tok2vec&quot;</span><span class="p">]</span>
+<span class="n">unaffected_pipes</span> <span class="o">=</span> <span class="p">[</span><span class="n">pipe</span> <span class="k">for</span> <span class="n">pipe</span> <span class="ow">in</span> <span class="n">nlp</span><span class="o">.</span><span class="n">pipe_names</span> <span class="k">if</span> <span class="n">pipe</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">pipe_exceptions</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Import requirements</span>
+<span class="kn">import</span> <span class="nn">random</span>
+<span class="kn">from</span> <span class="nn">spacy.util</span> <span class="kn">import</span> <span class="n">minibatch</span><span class="p">,</span> <span class="n">compounding</span>
+<span class="kn">from</span> <span class="nn">pathlib</span> <span class="kn">import</span> <span class="n">Path</span>
+
+<span class="c1"># TRAINING THE MODEL</span>
+<span class="k">with</span> <span class="n">nlp</span><span class="o">.</span><span class="n">disable_pipes</span><span class="p">(</span><span class="o">*</span><span class="n">unaffected_pipes</span><span class="p">):</span>
+
+  <span class="c1"># Training for 30 iterations</span>
+  <span class="k">for</span> <span class="n">iteration</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">30</span><span class="p">):</span>
+
+    <span class="c1"># shuufling examples  before every iteration</span>
+    <span class="n">random</span><span class="o">.</span><span class="n">shuffle</span><span class="p">(</span><span class="n">TRAIN_DATA</span><span class="p">)</span>
+    <span class="n">losses</span> <span class="o">=</span> <span class="p">{}</span>
+    <span class="c1"># batch up the examples using spaCy&#39;s minibatch</span>
+    <span class="n">batches</span> <span class="o">=</span> <span class="n">minibatch</span><span class="p">(</span><span class="n">TRAIN_DATA</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="n">compounding</span><span class="p">(</span><span class="mf">4.0</span><span class="p">,</span> <span class="mf">32.0</span><span class="p">,</span> <span class="mf">1.001</span><span class="p">))</span>
+    <span class="k">for</span> <span class="n">batch</span> <span class="ow">in</span> <span class="n">batches</span><span class="p">:</span>
+        <span class="n">texts</span><span class="p">,</span> <span class="n">annotations</span> <span class="o">=</span> <span class="nb">zip</span><span class="p">(</span><span class="o">*</span><span class="n">batch</span><span class="p">)</span>
+        <span class="n">nlp</span><span class="o">.</span><span class="n">update</span><span class="p">(</span>
+                    <span class="n">texts</span><span class="p">,</span>  <span class="c1"># batch of texts</span>
+                    <span class="n">annotations</span><span class="p">,</span>  <span class="c1"># batch of annotations</span>
+                    <span class="n">drop</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span>  <span class="c1"># dropout - make it harder to memorise data</span>
+                    <span class="n">losses</span><span class="o">=</span><span class="n">losses</span><span class="p">,</span>
+                <span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Losses&quot;</span><span class="p">,</span> <span class="n">losses</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Losses {&#39;ner&#39;: 2.79802933310566}
+Losses {&#39;ner&#39;: 6.5572232708655065}
+Losses {&#39;ner&#39;: 10.583572480853945}
+Losses {&#39;ner&#39;: 17.166763482641727}
+Losses {&#39;ner&#39;: 20.201538555150364}
+Losses {&#39;ner&#39;: 3.4893938341992907}
+Losses {&#39;ner&#39;: 8.978925689560128}
+Losses {&#39;ner&#39;: 10.579508926236485}
+Losses {&#39;ner&#39;: 16.459385909824277}
+Losses {&#39;ner&#39;: 16.470705719528496}
+Losses {&#39;ner&#39;: 1.452162479661638}
+Losses {&#39;ner&#39;: 3.856365315362382}
+Losses {&#39;ner&#39;: 7.9372624837496915}
+Losses {&#39;ner&#39;: 7.990312834569522}
+Losses {&#39;ner&#39;: 8.969974007675773}
+Losses {&#39;ner&#39;: 0.7285027665193411}
+Losses {&#39;ner&#39;: 3.872999651385726}
+Losses {&#39;ner&#39;: 9.735922971615764}
+Losses {&#39;ner&#39;: 9.93126372117149}
+Losses {&#39;ner&#39;: 9.938528795466482}
+Losses {&#39;ner&#39;: 4.626099403368698}
+Losses {&#39;ner&#39;: 6.214422158788693}
+Losses {&#39;ner&#39;: 8.3112459592312}
+Losses {&#39;ner&#39;: 8.496483260520108}
+Losses {&#39;ner&#39;: 9.120695187717615}
+Losses {&#39;ner&#39;: 2.5058818782621586}
+Losses {&#39;ner&#39;: 3.1848983159455884}
+Losses {&#39;ner&#39;: 6.953785156716776}
+Losses {&#39;ner&#39;: 6.9570558902635184}
+Losses {&#39;ner&#39;: 10.395410954551693}
+Losses {&#39;ner&#39;: 0.000723030280482817}
+Losses {&#39;ner&#39;: 1.8818408605662853}
+Losses {&#39;ner&#39;: 1.9580674245970897}
+Losses {&#39;ner&#39;: 5.240968269348826}
+Losses {&#39;ner&#39;: 5.241511363715789}
+Losses {&#39;ner&#39;: 0.5562189611225392}
+Losses {&#39;ner&#39;: 0.5565780784770311}
+Losses {&#39;ner&#39;: 2.963357479921541}
+Losses {&#39;ner&#39;: 4.0896355938852995}
+Losses {&#39;ner&#39;: 4.94005402300848}
+Losses {&#39;ner&#39;: 0.03810759255898688}
+Losses {&#39;ner&#39;: 3.5973440530262053}
+Losses {&#39;ner&#39;: 7.339358486790985}
+Losses {&#39;ner&#39;: 9.47295613386703}
+Losses {&#39;ner&#39;: 11.284437214536421}
+Losses {&#39;ner&#39;: 2.7364404071704485}
+Losses {&#39;ner&#39;: 5.625474677601119}
+Losses {&#39;ner&#39;: 6.660895514845656}
+Losses {&#39;ner&#39;: 10.190450851534301}
+Losses {&#39;ner&#39;: 10.318094390890804}
+Losses {&#39;ner&#39;: 0.9261451550414677}
+Losses {&#39;ner&#39;: 3.039627280901641}
+Losses {&#39;ner&#39;: 3.0513683121012036}
+Losses {&#39;ner&#39;: 4.533934560144644}
+Losses {&#39;ner&#39;: 4.533970482529077}
+Losses {&#39;ner&#39;: 0.964594695598123}
+Losses {&#39;ner&#39;: 0.9863216580657763}
+Losses {&#39;ner&#39;: 4.183950310742716}
+Losses {&#39;ner&#39;: 5.747506924562506}
+Losses {&#39;ner&#39;: 5.762332213668982}
+Losses {&#39;ner&#39;: 4.417288150583962}
+Losses {&#39;ner&#39;: 4.657713579045057}
+Losses {&#39;ner&#39;: 4.672685057090604}
+Losses {&#39;ner&#39;: 5.388438017631017}
+Losses {&#39;ner&#39;: 5.420051094861435}
+Losses {&#39;ner&#39;: 0.18962987582263224}
+Losses {&#39;ner&#39;: 2.103494854193926}
+Losses {&#39;ner&#39;: 2.145464715558049}
+Losses {&#39;ner&#39;: 2.2107951991922357}
+Losses {&#39;ner&#39;: 3.3110271830939166}
+Losses {&#39;ner&#39;: 1.0839667639011168}
+Losses {&#39;ner&#39;: 1.0844552438647952}
+Losses {&#39;ner&#39;: 1.1328061301257293}
+Losses {&#39;ner&#39;: 1.1358688179776948}
+Losses {&#39;ner&#39;: 1.7157223818723375}
+Losses {&#39;ner&#39;: 0.001391281259373045}
+Losses {&#39;ner&#39;: 0.10303413286843721}
+Losses {&#39;ner&#39;: 0.8815720854139761}
+Losses {&#39;ner&#39;: 0.8967971476019136}
+Losses {&#39;ner&#39;: 0.9019769164182426}
+Losses {&#39;ner&#39;: 1.654294196007529}
+Losses {&#39;ner&#39;: 1.6546032005604496}
+Losses {&#39;ner&#39;: 2.1037302487281195}
+Losses {&#39;ner&#39;: 4.080348539148101}
+Losses {&#39;ner&#39;: 4.080365592804945}
+Losses {&#39;ner&#39;: 0.32676053962278195}
+Losses {&#39;ner&#39;: 0.5972791685962766}
+Losses {&#39;ner&#39;: 0.7261824753771184}
+Losses {&#39;ner&#39;: 2.151414543575516}
+Losses {&#39;ner&#39;: 2.15141945832744}
+Losses {&#39;ner&#39;: 0.0007311550114887655}
+Losses {&#39;ner&#39;: 1.1595254684516396}
+Losses {&#39;ner&#39;: 1.1596923739452702}
+Losses {&#39;ner&#39;: 3.182830286679239}
+Losses {&#39;ner&#39;: 3.191491202790899}
+Losses {&#39;ner&#39;: 1.3779206073464803}
+Losses {&#39;ner&#39;: 1.4973354036342224}
+Losses {&#39;ner&#39;: 1.5161560012451578}
+Losses {&#39;ner&#39;: 1.8782089616097797}
+Losses {&#39;ner&#39;: 1.8782135815594732}
+Losses {&#39;ner&#39;: 0.009040009844278385}
+Losses {&#39;ner&#39;: 0.013932552335778333}
+Losses {&#39;ner&#39;: 1.7699211929273935}
+Losses {&#39;ner&#39;: 1.9564442579510453}
+Losses {&#39;ner&#39;: 2.136745253750152}
+Losses {&#39;ner&#39;: 1.8967500109432541e-06}
+Losses {&#39;ner&#39;: 0.001523974231300351}
+Losses {&#39;ner&#39;: 0.0037596282318862473}
+Losses {&#39;ner&#39;: 0.004145050804989562}
+Losses {&#39;ner&#39;: 0.5755559537612337}
+Losses {&#39;ner&#39;: 0.0005346685964555675}
+Losses {&#39;ner&#39;: 0.17060602139713735}
+Losses {&#39;ner&#39;: 0.17060861453141796}
+Losses {&#39;ner&#39;: 0.1936667708497245}
+Losses {&#39;ner&#39;: 0.38054475758435974}
+Losses {&#39;ner&#39;: 0.15408084836030897}
+Losses {&#39;ner&#39;: 1.0357000088604063}
+Losses {&#39;ner&#39;: 1.0362832845025751}
+Losses {&#39;ner&#39;: 3.494905239471497}
+Losses {&#39;ner&#39;: 3.4949247893226314}
+Losses {&#39;ner&#39;: 0.0007469517644334983}
+Losses {&#39;ner&#39;: 1.2352942383716805}
+Losses {&#39;ner&#39;: 2.445694195119488}
+Losses {&#39;ner&#39;: 2.448697806506084}
+Losses {&#39;ner&#39;: 3.280585551869292}
+Losses {&#39;ner&#39;: 0.2454245163035764}
+Losses {&#39;ner&#39;: 0.24613928659120257}
+Losses {&#39;ner&#39;: 0.2462838365233372}
+Losses {&#39;ner&#39;: 0.6216570270686371}
+Losses {&#39;ner&#39;: 0.6216570944127838}
+Losses {&#39;ner&#39;: 0.03605511941528726}
+Losses {&#39;ner&#39;: 0.04335675986691904}
+Losses {&#39;ner&#39;: 0.2595648032298589}
+Losses {&#39;ner&#39;: 0.2703440900083527}
+Losses {&#39;ner&#39;: 3.108345198034661}
+Losses {&#39;ner&#39;: 3.0856880187055253}
+Losses {&#39;ner&#39;: 3.085692007039736}
+Losses {&#39;ner&#39;: 3.085699115707172}
+Losses {&#39;ner&#39;: 3.0858574029335593}
+Losses {&#39;ner&#39;: 4.315502504998114}
+Losses {&#39;ner&#39;: 2.548805532631704e-06}
+Losses {&#39;ner&#39;: 1.3206831177781098e-05}
+Losses {&#39;ner&#39;: 0.017183348315518238}
+Losses {&#39;ner&#39;: 1.6225689963456464}
+Losses {&#39;ner&#39;: 1.6241632734057336}
+Losses {&#39;ner&#39;: 2.046577314772795}
+Losses {&#39;ner&#39;: 2.0469600372276178}
+Losses {&#39;ner&#39;: 2.0469606332290433}
+Losses {&#39;ner&#39;: 2.063970443197282}
+Losses {&#39;ner&#39;: 3.163406515439773}
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Testing the model</span>
+<span class="n">doc</span> <span class="o">=</span> <span class="n">nlp</span><span class="p">(</span><span class="s2">&quot;I was driving a Maruti&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Entities&quot;</span><span class="p">,</span> <span class="p">[(</span><span class="n">ent</span><span class="o">.</span><span class="n">text</span><span class="p">,</span> <span class="n">ent</span><span class="o">.</span><span class="n">label_</span><span class="p">)</span> <span class="k">for</span> <span class="n">ent</span> <span class="ow">in</span> <span class="n">doc</span><span class="o">.</span><span class="n">ents</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Entities [(&#39;Maruti&#39;, &#39;PRODUCT&#39;)]
+</pre></div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./notebooks"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="../markdown.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Markdown Files</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="NYC_Property_Sales.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Case study 2: Linear regression model to predict sales price of properties</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            
+        </div>
+    </div>
+    <footer class="footer">
+  <p>
+    
+      By Sai Charan Tej<br/>
+    
+        &copy; Copyright 2021.<br/>
+  </p>
+</footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
+  </body>
+</html>
